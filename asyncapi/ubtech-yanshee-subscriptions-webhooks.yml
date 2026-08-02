@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ubtech-yanshee-openadk-openapi-original.yml
+type: Webhooks
+name: Yanshee Open ADK subscription push events
+description: >-
+  The Yanshee robot's Open ADK subscription surface pushes device events to a
+  subscriber-hosted HTTP callback endpoint (documented callback host
+  127.0.0.1:10101, basePath /v1). Each channel below is delivered as an HTTP
+  PUT to the subscriber with a JSON envelope (code/data/msg). Derived from the
+  published Swagger 2.0 spec in UBTEDU/Yan_ADK; UBTech publishes no AsyncAPI
+  document.
+delivery:
+  transport: http
+  method: PUT
+  content_type: application/json
+  envelope: code/data/msg (code 0 = success)
+channels:
+  - path: /subscriptions/motions
+    operationId: putMotions
+    event: Motion status (idle | run | pause) with motion name and timestamp
+  - path: /subscriptions/sensors/gyro
+    operationId: putSensorsSubscription
+    event: Gyroscope readings (gyro/accel/compass/euler x-y-z)
+  - path: /subscriptions/sensors/ultrasonic
+    operationId: putSensorsSubscriptionSensorsUltrasonic
+    event: Ultrasonic distance readings (mm)
+  - path: /subscriptions/sensors/infrared
+    operationId: putSensorsSubscriptionSensorsInfrared
+    event: Infrared distance readings (mm)
+  - path: /subscriptions/sensors/environment
+    operationId: putSensorsSubscriptionSensorsEnvironment
+    event: Environment readings (temperature, humidity, pressure)
+  - path: /subscriptions/sensors/touch
+    operationId: putSensorsSubscriptionSensorsTouch
+    event: Touch sensor button states
+  - path: /subscriptions/sensors/pressure
+    operationId: putSensorsSubscriptionSensorsPressure
+    event: Pressure sensor readings (N)
+  - path: /subscriptions/visions
+    operationId: putVisionSubscriptionVisions
+    event: >-
+      Computer-vision results (recognition, tracking, gender, age_group,
+      quantity, color_detect)
+  - path: /subscriptions/voice/iat
+    operationId: putVoiceIatSubscriptionVoiceIAT
+    event: Voice IAT (speech-to-text transform) results
+  - path: /subscriptions/voice/asr
+    operationId: putVoiceAsrSubscriptionsVoiceASR
+    event: Automatic speech recognition results
+  - path: /subscriptions/voice/tts
+    operationId: putTTSSubscriptionsVoiceTTS
+    event: Text-to-speech status events

@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/UBTEDU/Yanshee-ReleaseNote
+scheme: semantic (vMAJOR.MINOR.PATCH)
+current_version: v1.5.1
+notes: >-
+  UBTech publishes Yanshee robot system release notes in the
+  UBTEDU/Yanshee-ReleaseNote GitHub repository (Versions/ folder). No dated
+  company-wide developer changelog exists; this captures the published
+  Yanshee release-note window.
+entries:
+  - version: v1.5.1
+    date: null
+    breaking: true
+    highlights:
+      - ROS (Robot Operating System) architecture integration
+      - >-
+        Expanded REST API interfaces across operating systems, with Swagger
+        UI served on the robot at http://<robot-ip>:9090/v1/ui
+      - >-
+        PC Blockly optimization: servo range limiting, synchronous blocking
+        for event/motion/AI blocks, 5-second timeout for visual tasks,
+        removal of some face-recognition blocks
+      - >-
+        Upgrade requires system reinstallation (~1 hour) and two sequential
+        OTA upgrades from earlier versions

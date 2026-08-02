@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/UBTEDU/Yanshee-ReleaseNote
+versioning:
+  scheme: uri-path
+  current: v1
+  notes: >-
+    The Yanshee Open ADK REST API is versioned in the URI path (/v1); the
+    robot serves interactive Swagger UI at http://<robot-ip>:9090/v1/ui.
+    Robot system software is versioned vMAJOR.MINOR.PATCH (current published
+    release notes: v1.5.1) in UBTEDU/Yanshee-ReleaseNote.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset header support found.
+sla:
+  url: null
+  notes: No SLA published (device-local API).
+status_page: null
+release_notes: https://github.com/UBTEDU/Yanshee-ReleaseNote
+deprecated_operations: []

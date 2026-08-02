@@ -1,0 +1,14 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ubtech-yanshee-openadk-openapi-original.yml
+summary:
+  types: []
+  notes: >-
+    The published Yanshee Open ADK Swagger 2.0 spec declares no
+    securityDefinitions (an oauth2/apiKey example block exists but is
+    commented out). The Yanshee robot API is a device-local HTTP API on the
+    LAN (http://<robot-ip>:9090/v1) with no documented authentication; the
+    subscription callback surface (127.0.0.1:10101) is likewise
+    unauthenticated. Cloud account services (account.ubtrobot.com) exist for
+    UBTech apps but publish no developer-facing auth documentation.
+schemes: []

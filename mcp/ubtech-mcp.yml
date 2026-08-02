@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/ubtech-yanshee-openadk-openapi-original.yml
+notes: >-
+  No official UBTech-hosted MCP server was found (GitHub org UBTEDU, npm and
+  PyPI probed 2026-07-21). Candidate tool list derived from the published
+  Yanshee Open ADK subscription operations; these model the robot's push
+  event surface a local MCP server could expose as subscription management /
+  event retrieval tools.
+server:
+  name: ubtech-yanshee
+  transport: http
+tools:
+  - name: receive_motion_status
+    description: Receive motion status events (idle/run/pause) pushed by the Yanshee robot
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putMotions
+  - name: receive_gyro_readings
+    description: Receive gyroscope/accelerometer/compass/euler sensor readings
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putSensorsSubscription
+  - name: receive_ultrasonic_readings
+    description: Receive ultrasonic distance sensor readings
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putSensorsSubscriptionSensorsUltrasonic
+  - name: receive_infrared_readings
+    description: Receive infrared distance sensor readings
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putSensorsSubscriptionSensorsInfrared
+  - name: receive_environment_readings
+    description: Receive temperature/humidity/pressure environment readings
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putSensorsSubscriptionSensorsEnvironment
+  - name: receive_touch_events
+    description: Receive touch sensor button events
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putSensorsSubscriptionSensorsTouch
+  - name: receive_pressure_readings
+    description: Receive pressure sensor readings
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putSensorsSubscriptionSensorsPressure
+  - name: receive_vision_results
+    description: Receive computer-vision results (recognition, tracking, gender, age group, quantity, color)
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putVisionSubscriptionVisions
+  - name: receive_voice_iat_results
+    description: Receive voice IAT (speech transform) results
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putVoiceIatSubscriptionVoiceIAT
+  - name: receive_voice_asr_results
+    description: Receive automatic speech recognition results
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putVoiceAsrSubscriptionsVoiceASR
+  - name: receive_voice_tts_status
+    description: Receive text-to-speech status events
+    source_operation: openapi/ubtech-yanshee-openadk-openapi-original.yml#putTTSSubscriptionsVoiceTTS

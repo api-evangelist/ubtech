@@ -1,0 +1,28 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Yanshee Open ADK
+  version: 1.0.0
+extends: openapi/ubtech-yanshee-openadk-openapi-original.yml
+x-generated: '2026-07-21'
+x-method: generated
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: ubtech
+      x-apievangelist-notes: >-
+        Device-local subscription/callback surface of the Yanshee educational
+        humanoid robot. Data is pushed from the robot to a subscriber-hosted
+        callback server; the robot's own REST API is served from
+        http://<robot-ip>:9090/v1. Sourced verbatim from
+        UBTEDU/Yan_ADK openadk/yaml/openadk_en.yaml.
+  - target: $.info
+    update:
+      x-apievangelist-artifacts:
+        conventions: conventions/ubtech-conventions.yml
+        webhooks: asyncapi/ubtech-yanshee-subscriptions-webhooks.yml
+        packages: packages/ubtech-packages.yml
+  - target: $.tags
+    update:
+      - name: subscriptions
+        description: Receive data from remote device.
+        x-apievangelist-event-surface: true

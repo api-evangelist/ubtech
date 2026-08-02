@@ -1,0 +1,14 @@
+{
+  "provider": "ubtech",
+  "sources": [
+    "ubtech-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "ubtech-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

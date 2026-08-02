@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ubtech-yanshee-openadk-openapi-original.yml
+name: UBTech Yanshee Open ADK API conventions
+description: >-
+  Cross-cutting request/response semantics for the Yanshee Open ADK REST API,
+  derived from the published Swagger 2.0 definition in the UBTEDU/Yan_ADK
+  repository. The Yanshee robot exposes a device-local HTTP API (documented
+  host form http://<robot-ip>:9090/v1); the Open ADK subscription surface
+  receives data pushed from the robot to a local callback server
+  (documented as 127.0.0.1:10101 in the spec).
+authentication:
+  style: none
+  notes: >-
+    The published Swagger declares no securityDefinitions (an oauth2/apiKey
+    block is present but commented out). The Yanshee API is a device-local
+    LAN API without documented authentication.
+versioning:
+  style: uri-path
+  current: v1
+  base_path: /v1
+idempotency:
+  supported: false
+  notes: No idempotency-key header or parameter is documented.
+pagination:
+  style: none
+  notes: No pagination parameters are documented in the published spec.
+request_tracing:
+  header: null
+  notes: No request-id tracing header is documented.
+error_envelope:
+  shape:
+    code: "integer return code, 0 means success"
+    data: "object payload"
+    msg: "return code details"
+  media_type: application/json
+  schema: 'openapi/ubtech-yanshee-openadk-openapi-original.yml#/definitions/SubscriptionCommonResponse'
+  notes: >-
+    All documented responses use a common envelope of code/data/msg; no
+    RFC 9457 problem+json and no documented 4xx/5xx problem types.
+rate_limits:
+  signaling: none
+  notes: No rate-limit headers or policy documented for the device-local API.
+event_model:
+  style: subscription-push
+  notes: >-
+    The subscriptions API pushes motion status, sensor readings (gyro,
+    ultrasonic, infrared, environment, touch, pressure), vision results and
+    voice (ASR/IAT/TTS) events from the robot to a subscriber callback
+    endpoint via HTTP PUT.
+cross_links:
+  authentication: authentication/ubtech-authentication.yml
+  webhooks: asyncapi/ubtech-yanshee-subscriptions-webhooks.yml
+  lifecycle: lifecycle/ubtech-lifecycle.yml

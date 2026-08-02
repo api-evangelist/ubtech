@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/ubtech-yanshee-openadk-openapi-original.yml
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No securityDefinitions in the published Yanshee Open ADK Swagger; an
+      oauth2 example block is present but commented out.
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect surface documented.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors use a proprietary code/data/msg envelope
+      (SubscriptionCommonResponse), not application/problem+json.
+  - id: json-api
+    conforms: false
+    evidence: Responses are plain JSON envelopes, not JSON:API documents.
+  - id: pagination
+    conforms: false
+    evidence: No pagination convention documented in the published spec.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key mechanism documented.
+  - id: openapi-2.0
+    conforms: true
+    evidence: >-
+      Published API description is Swagger 2.0
+      (openadk/yaml/openadk_en.yaml in UBTEDU/Yan_ADK).

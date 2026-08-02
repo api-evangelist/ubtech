@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: ubtech-receive-yanshee-events.md
+    name: Receive Yanshee robot events
+    api: openapi/ubtech-yanshee-openadk-openapi-original.yml
+    operations:
+      - putMotions
+      - putSensorsSubscription
+      - putSensorsSubscriptionSensorsUltrasonic
+      - putSensorsSubscriptionSensorsInfrared
+      - putSensorsSubscriptionSensorsEnvironment
+      - putSensorsSubscriptionSensorsTouch
+      - putSensorsSubscriptionSensorsPressure
+      - putVisionSubscriptionVisions
+      - putVoiceIatSubscriptionVoiceIAT
+      - putVoiceAsrSubscriptionsVoiceASR
+      - putTTSSubscriptionsVoiceTTS

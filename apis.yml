@@ -1,21 +1,62 @@
 aid: ubtech
 name: UBTech
-description: 'UBTech is a company surfaced as a portfolio company of qiming and added to the API Evangelist
-  network as a stub for enrichment. Sector: robotics. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  UBTech Robotics is a Shenzhen-based robotics company building humanoid
+  robots (the Walker series), commercial service robots (Cruzr, CADEBOT),
+  AI education robots and kits (Yanshee, uKit, UGOT, Jimu), and consumer
+  smart hardware (Alpha robots, AIRROBO). Its developer surface centers on
+  the Yanshee educational humanoid, an open Raspberry Pi-based robot that
+  exposes a device-local REST API (Yanshee Open ADK, Swagger 2.0) with an
+  on-robot Swagger UI, a push-based subscription event surface, and Python,
+  C, and Arduino SDKs published through the UBTEDU GitHub organization.
 url: https://raw.githubusercontent.com/api-evangelist/ubtech/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - qiming
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profile
+x-tier-reason: enriched-from-portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://avatars.githubusercontent.com/u/32864785?v=4
 tags:
 - Company
 - Robotics
-apis: []
+- Humanoid Robots
+- Education Technology
+- Artificial Intelligence
+- Consumer Electronics
+- Service Robots
+apis:
+- aid: ubtech:ubtech-subscriptions-api
+  name: UBTech subscriptions API
+  description: Receive data from remote device.
+  humanURL: https://github.com/UBTEDU/Yan_ADK
+  baseURL: http://<robot-ip>:9090/v1
+  tags:
+  - subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/ubtech-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/UBTEDU/Yan_ADK/tree/master/docs
+  - type: APIReference
+    url: https://github.com/UBTEDU/Yan_ADK/tree/master/docs
+  - type: GettingStarted
+    url: https://github.com/UBTEDU/Yan_ADK/blob/master/README.md
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +65,52 @@ maintainers:
 common:
 - type: Website
   url: https://ubtrobot.com
+- type: DeveloperPortal
+  url: https://yandev.ubtrobot.com/
+- type: Documentation
+  url: https://github.com/UBTEDU/Yan_ADK/tree/master/docs
+- type: GitHubOrganization
+  url: https://github.com/UBTEDU
+- type: Blog
+  url: https://www.ubtrobot.com/en/about/news
+- type: Support
+  url: https://www.ubtrobot.com/en/support/downloads
+- type: PrivacyPolicy
+  url: https://www.ubtrobot.com/en/privacy/privacy-policy
+- type: TermsOfService
+  url: https://www.ubtrobot.com/en/privacy/term-of-use
+- type: Security
+  url: https://www.ubtrobot.com/en/privacy/loophole/
+- type: VulnerabilityDisclosure
+  url: security/ubtech-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/ubtech-domain-security.yml
+- type: Packages
+  url: packages/ubtech-packages.yml
+- type: SDKs
+  url: packages/ubtech-packages.yml
+- type: MCPServer
+  url: mcp/ubtech-mcp.yml
+- type: LLMsTxt
+  url: llms/ubtech-llms.txt
+- type: Overlay
+  url: overlays/ubtech-yanshee-openadk-overlay.yaml
+- type: Conformance
+  url: conformance/ubtech-conformance.yml
+- type: Lifecycle
+  url: lifecycle/ubtech-lifecycle.yml
+- type: ChangeLog
+  url: changelog/ubtech-changelog.yml
+- type: Conventions
+  url: conventions/ubtech-conventions.yml
+- type: Authentication
+  url: authentication/ubtech-authentication.yml
+- type: Webhooks
+  url: asyncapi/ubtech-yanshee-subscriptions-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1

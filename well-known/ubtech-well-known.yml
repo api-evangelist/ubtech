@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+notes: >-
+  Probed 2026-07-21. www.ubtrobot.com serves /.well-known/* behind a 301 to
+  /en/... which returns a JSON 404 ("Page not found"). yandev.ubtrobot.com
+  returns HTTP 200 for every /.well-known/ path, but the body is the site's
+  Vue single-page-app HTML shell (SPA catch-all), not the requested document
+  — recorded here as not-present. No real well-known documents were found,
+  so no raw files are saved.
+hosts:
+  - host: https://www.ubtrobot.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://yandev.ubtrobot.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        note: SPA catch-all returns HTML app shell, not a security.txt
+      - path: /.well-known/openid-configuration
+        status: 200
+        note: SPA catch-all returns HTML app shell, not an OIDC document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        note: SPA catch-all returns HTML app shell
+      - path: /.well-known/api-catalog
+        status: 200
+        note: SPA catch-all returns HTML app shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        note: SPA catch-all returns HTML app shell

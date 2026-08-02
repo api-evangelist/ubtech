@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/UBTEDU
+notes: >-
+  UBTech ships first-party client libraries via its UBTEDU GitHub organization
+  (education/Yanshee line), not via public package registries: npm
+  (registry.npmjs.org/openadk, /ubtech) and PyPI (pypi.org/pypi/openadk,
+  /yanshee) all returned 404 on 2026-07-21.
+packages:
+  - language: python
+    registry: github
+    name: openadk (Yan_ADK)
+    url: https://github.com/UBTEDU/Yan_ADK
+    install: pip install git+https://github.com/UBTEDU/Yanshee_OpenADK.git
+    official: true
+    notes: >-
+      Swagger-codegen generated Python SDK for the Yanshee Open ADK REST API
+      (devices, media, motions, sensors, servos, subscriptions, visions,
+      voice). Apache 2.0.
+  - language: c
+    registry: github
+    name: Yanshee-Raspi-SDK
+    url: https://github.com/UBTEDU/Yanshee-Raspi-SDK
+    install: git clone https://github.com/UBTEDU/Yanshee-Raspi-SDK.git
+    official: true
+    notes: C SDK for the Raspberry Pi inside the Yanshee robot.
+  - language: c
+    registry: github
+    name: Yanshee-SDK
+    url: https://github.com/UBTEDU/Yanshee-SDK
+    install: git clone https://github.com/UBTEDU/Yanshee-SDK.git
+    official: true
+    notes: Yanshee robot C SDK.
+  - language: cpp
+    registry: github
+    name: uKitExplore-library
+    url: https://github.com/UBTEDU/uKitExplore-library
+    install: Arduino IDE library (import ZIP from GitHub)
+    official: true
+    notes: Arduino library for the uKit Explore education kit.
