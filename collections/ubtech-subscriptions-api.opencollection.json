@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yanshee Open ADK subscriptions API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the motion's status, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/motions"
+          },
+          "docs": " Get motions' status. The possible values:\n- idle\n- run\n- pause "
+        },
+        {
+          "info": {
+            "name": "Get the gyroscope sensor's data, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/sensors/gyro"
+          },
+          "docs": "Get the gyroscope sensor's data, which is pushed from the remote device."
+        },
+        {
+          "info": {
+            "name": "Get ultrasonic sensor's data, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/sensors/ultrasonic"
+          },
+          "docs": "Get ultrasonic sensor's data, which is pushed from the remote device."
+        },
+        {
+          "info": {
+            "name": "Get infrared sensor's data, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/sensors/infrared"
+          },
+          "docs": "Get infrared sensor's data, which is pushed from the remote device."
+        },
+        {
+          "info": {
+            "name": "Get environment sensor's data, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/sensors/environment"
+          },
+          "docs": "Get environment sensor's data, which is pushed from the remote device."
+        },
+        {
+          "info": {
+            "name": "Get touch sensor's data, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/sensors/touch"
+          },
+          "docs": "Get touch sensor's data, which is pushed from the remote device."
+        },
+        {
+          "info": {
+            "name": "Get pressure sensor's data, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/sensors/pressure"
+          },
+          "docs": "Get pressure sensor's data, which is pushed from the remote device."
+        },
+        {
+          "info": {
+            "name": "Get compute vision's result, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/visions"
+          },
+          "docs": "URL example: http://10.10.1.30:80/subscriptions/visions"
+        },
+        {
+          "info": {
+            "name": "Get auto transform's result, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/voice/iat"
+          },
+          "docs": "URL example: http://10.10.1.30:80/subscriptions/voice/iat"
+        },
+        {
+          "info": {
+            "name": "Get automatic speech recognition's result, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/voice/asr"
+          },
+          "docs": "URL example: http://10.10.1.30:80/subscriptions/voice/asr"
+        },
+        {
+          "info": {
+            "name": "Get text to speech's result, which is pushed from the remote device.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/voice/tts"
+          },
+          "docs": "Example URL : http://10.10.1.30:80/tts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

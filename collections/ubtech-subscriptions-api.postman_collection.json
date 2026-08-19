@@ -1,0 +1,1049 @@
+{
+  "item": [
+    {
+      "id": "327d469c-d721-4b3a-9b96-f30e4a36ece4",
+      "name": "subscriptions",
+      "description": {
+        "content": "Receive data from remote device.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "845d418f-bb65-4e25-bb4f-9a2c6ce4b420",
+          "name": "Get the motion's status, which is pushed from the remote device.",
+          "request": {
+            "name": "Get the motion's status, which is pushed from the remote device.",
+            "description": {
+              "content": " Get motions' status. The possible values:\n- idle\n- run\n- pause ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "motions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"status\": \"<string>\",\n    \"name\": \"None\",\n    \"timestamp\": \"<long>\"\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "29107bf9-81ab-42ee-89d6-5dd01c802ea2",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "motions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"status\": \"<string>\",\n    \"name\": \"None\",\n    \"timestamp\": 1551838515\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8df5f6e-2b63-4e6a-85d5-365ecf5554c6",
+          "name": "Get the gyroscope sensor's data, which is pushed from the remote device.",
+          "request": {
+            "name": "Get the gyroscope sensor's data, which is pushed from the remote device.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "sensors",
+                "gyro"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"gyro\": [\n      {\n        \"id\": \"<integer>\",\n        \"euler-x\": \"<float>\",\n        \"euler-y\": \"<float>\",\n        \"euler-z\": \"<float>\",\n        \"gyro-x\": \"<float>\",\n        \"gyro-y\": \"<float>\",\n        \"gyro-z\": \"<float>\",\n        \"accel-x\": \"<float>\",\n        \"accel-y\": \"<float>\",\n        \"accel-z\": \"<number>\",\n        \"compass-x\": \"<float>\",\n        \"compass-y\": \"<float>\",\n        \"compass-z\": \"<float>\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"euler-x\": \"<float>\",\n        \"euler-y\": \"<float>\",\n        \"euler-z\": \"<float>\",\n        \"gyro-x\": \"<float>\",\n        \"gyro-y\": \"<float>\",\n        \"gyro-z\": \"<float>\",\n        \"accel-x\": \"<float>\",\n        \"accel-y\": \"<float>\",\n        \"accel-z\": \"<number>\",\n        \"compass-x\": \"<float>\",\n        \"compass-y\": \"<float>\",\n        \"compass-z\": \"<float>\"\n      }\n    ]\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd9f4199-c45f-4681-ae0b-dac61b08a69a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "sensors",
+                    "gyro"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"gyro\": [\n      {\n        \"id\": 52,\n        \"euler-x\": 8.073578,\n        \"euler-y\": -10.11795,\n        \"euler-z\": 0.72052,\n        \"gyro-x\": 0.1021,\n        \"gyro-y\": 0.602,\n        \"gyro-z\": 0.0213,\n        \"accel-x\": 0.147949,\n        \"accel-y\": 0.116699,\n        \"accel-z\": 0.813477,\n        \"compass-x\": 0.1021,\n        \"compass-y\": 0.602,\n        \"compass-z\": 0.01232\n      },\n      {\n        \"id\": 52,\n        \"euler-x\": 8.073578,\n        \"euler-y\": -10.11795,\n        \"euler-z\": 0.72052,\n        \"gyro-x\": 0.1021,\n        \"gyro-y\": 0.602,\n        \"gyro-z\": 0.0213,\n        \"accel-x\": 0.147949,\n        \"accel-y\": 0.116699,\n        \"accel-z\": 0.813477,\n        \"compass-x\": 0.1021,\n        \"compass-y\": 0.602,\n        \"compass-z\": 0.01232\n      }\n    ]\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d962b03-29dd-4492-8ad5-0e5f05095ee2",
+          "name": "Get ultrasonic sensor's data, which is pushed from the remote device.",
+          "request": {
+            "name": "Get ultrasonic sensor's data, which is pushed from the remote device.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "sensors",
+                "ultrasonic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"ultrasonic\": [\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      }\n    ]\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "275b8463-cf8d-4aac-afdf-343f6a58c74e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "sensors",
+                    "ultrasonic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"ultrasonic\": [\n      {\n        \"id\": 17,\n        \"value\": 25,\n        \"slot\": 1\n      },\n      {\n        \"id\": 17,\n        \"value\": 25,\n        \"slot\": 1\n      }\n    ]\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8bf554b-2b48-4af7-a344-e249fb9eec21",
+          "name": "Get infrared sensor's data, which is pushed from the remote device.",
+          "request": {
+            "name": "Get infrared sensor's data, which is pushed from the remote device.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "sensors",
+                "infrared"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"infrared\": [\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      }\n    ]\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "adf2b8e3-28bf-4c8f-bbc0-abbc1ca26383",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "sensors",
+                    "infrared"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"infrared\": [\n      {\n        \"id\": 23,\n        \"value\": 25,\n        \"slot\": 1\n      },\n      {\n        \"id\": 23,\n        \"value\": 25,\n        \"slot\": 1\n      }\n    ]\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36739cb4-49bf-43c8-95dc-33a9be55325d",
+          "name": "Get environment sensor's data, which is pushed from the remote device.",
+          "request": {
+            "name": "Get environment sensor's data, which is pushed from the remote device.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "sensors",
+                "environment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"environment\": [\n      {\n        \"id\": \"<integer>\",\n        \"temperature\": \"<integer>\",\n        \"humidity\": \"<integer>\",\n        \"slot\": \"<integer>\",\n        \"pressure\": \"<integer>\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"temperature\": \"<integer>\",\n        \"humidity\": \"<integer>\",\n        \"slot\": \"<integer>\",\n        \"pressure\": \"<integer>\"\n      }\n    ]\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "655bd946-a043-4226-af2f-b7deefdb8835",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "sensors",
+                    "environment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"environment\": [\n      {\n        \"id\": 54,\n        \"temperature\": 25,\n        \"humidity\": 75,\n        \"slot\": 1,\n        \"pressure\": 1003\n      },\n      {\n        \"id\": 54,\n        \"temperature\": 25,\n        \"humidity\": 75,\n        \"slot\": 1,\n        \"pressure\": 1003\n      }\n    ]\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "398e9afb-ba0f-455d-933c-8aabfae8c28a",
+          "name": "Get touch sensor's data, which is pushed from the remote device.",
+          "request": {
+            "name": "Get touch sensor's data, which is pushed from the remote device.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "sensors",
+                "touch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"touch\": [\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      }\n    ]\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c69dd88-a5b9-4ca7-8549-e0d1d352eb2e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "sensors",
+                    "touch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"touch\": [\n      {\n        \"id\": 29,\n        \"value\": 25,\n        \"slot\": 1\n      },\n      {\n        \"id\": 29,\n        \"value\": 25,\n        \"slot\": 1\n      }\n    ]\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7833369d-d377-41d9-95d6-55de13bd9a76",
+          "name": "Get pressure sensor's data, which is pushed from the remote device.",
+          "request": {
+            "name": "Get pressure sensor's data, which is pushed from the remote device.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "sensors",
+                "pressure"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"pressure\": [\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      },\n      {\n        \"id\": \"<integer>\",\n        \"value\": \"<integer>\",\n        \"slot\": \"<integer>\"\n      }\n    ]\n  },\n  \"msg\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7026c567-d254-4570-8376-458a074f8bf5",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "sensors",
+                    "pressure"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<integer>\",\n  \"data\": {\n    \"pressure\": [\n      {\n        \"id\": 35,\n        \"value\": 25,\n        \"slot\": 1\n      },\n      {\n        \"id\": 35,\n        \"value\": 25,\n        \"slot\": 1\n      }\n    ]\n  },\n  \"msg\": \"Success\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0b24bc1-acd0-456c-a854-c98e083cb692",
+          "name": "Get compute vision's result, which is pushed from the remote device.",
+          "request": {
+            "name": "Get compute vision's result, which is pushed from the remote device.",
+            "description": {
+              "content": "URL example: http://10.10.1.30:80/subscriptions/visions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "visions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"msg\": \"<string>\",\n  \"data\": {\n    \"analysis\": {\n      \"age\": {\n        \"age\": \"<integer>\",\n        \"group\": \"<string>\"\n      },\n      \"gender\": {\n        \"gender\": \"<string>\"\n      }\n    },\n    \"recognition\": {\n      \"name\": \"<string>\"\n    },\n    \"quantity\": \"<integer>\",\n    \"color\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  },\n  \"timestamp\": \"<long>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "643adc8c-58cf-4096-9572-a62faeffdd8d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "visions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": 0,\n  \"type\": \"<string>\",\n  \"msg\": \"Success\",\n  \"data\": {\n    \"analysis\": {\n      \"age\": {\n        \"age\": 5,\n        \"group\": \"baby\"\n      },\n      \"gender\": {\n        \"gender\": \"<string>\"\n      }\n    },\n    \"recognition\": {\n      \"name\": \"<string>\"\n    },\n    \"quantity\": 1,\n    \"color\": [\n      {\n        \"name\": \"black\"\n      },\n      {\n        \"name\": \"gray\"\n      },\n      {\n        \"name\": \"red\"\n      },\n      {\n        \"name\": \"blue\"\n      }\n    ]\n  },\n  \"timestamp\": 1551838515,\n  \"status\": \"idle\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c045c853-c28c-4e05-9589-c84b2eef4dc3",
+          "name": "Get auto transform's result, which is pushed from the remote device.",
+          "request": {
+            "name": "Get auto transform's result, which is pushed from the remote device.",
+            "description": {
+              "content": "URL example: http://10.10.1.30:80/subscriptions/voice/iat",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "voice",
+                "iat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"msg\": \"<string>\",\n  \"data\": \"<object>\",\n  \"status\": \"<string>\",\n  \"timestamp\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "35903357-e1e5-4ac9-91bf-c4bf8b9af640",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "voice",
+                    "iat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a362f74-c248-4d87-8700-b6e777d58af4",
+          "name": "Get automatic speech recognition's result, which is pushed from the remote device.",
+          "request": {
+            "name": "Get automatic speech recognition's result, which is pushed from the remote device.",
+            "description": {
+              "content": "URL example: http://10.10.1.30:80/subscriptions/voice/asr",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "voice",
+                "asr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"msg\": \"<string>\",\n  \"data\": \"<object>\",\n  \"status\": \"<string>\",\n  \"timestamp\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5214f633-8239-432d-9d0e-041344a8f3ab",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "voice",
+                    "asr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b4f89c4-bbf5-45ee-9898-863507057a55",
+          "name": "Get text to speech's result, which is pushed from the remote device.",
+          "request": {
+            "name": "Get text to speech's result, which is pushed from the remote device.",
+            "description": {
+              "content": "Example URL : http://10.10.1.30:80/tts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                "voice",
+                "tts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"msg\": \"<string>\",\n  \"data\": \"<object>\",\n  \"status\": \"<string>\",\n  \"timestamp\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a29f76e-71c3-4830-b39b-e0571a0028cf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    "voice",
+                    "tts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7264,\n  \"data\": {},\n  \"msg\": \"Success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:10101/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3c95b871-04e7-4fb3-b37a-182dc67a04b5",
+    "name": "Yanshee Open ADK subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": " ## Overview\nOpen ADK is designed for the users that they can build their own application very quickly. Open ADK provided two features:\n- Easy way to call API\n- Easy way to receive the data from remote device\n\n## Requirements.\nPython 2.7 or 3.4+\n\n## Installation & Usage\nYou can install Open ADK from github.\n```\npip install git+https://github.com/UBTEDU/Yanshee_OpenADK.git\n```\n(you may need to run pip with root permission: sudo pip install git+https://github.com/UBTEDU/Yanshee_OpenADK.git)\nThen import the package:\n```\nimport openadk\n```\n\n## Setuptools\nInstall via [Setuptools](https://pypi.org/project/setuptools/).\n```\npython setup.py install --user\n```\n(or sudo python setup.py install to install the package for all users)\nThen import the package:\n```\nimport openadk\n```\n\n## Getting Started\nPlease follow the installation procedure and then run the following:\n```\nfrom __future__ import print_function\nimport time\nimport openadk\nfrom openadk.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\nconfiguration = openadk.Configuration()\nconfiguration.host = 'http://<ip>:9090/v1'\napi_instance = openadk.DevicesApi(openadk.ApiClient(configuration))\n\ntry:\n\t# Get system's battery information\n\tapi_response = api_instance.get_devices_battery()\n\tpprint(api_response)\nexcept ApiException as e:\n\tprint(\"Exception when calling DevicesApi->get_devices_battery: %s\" % e)\n```\n\n\nContact Support:\n Email: swenggroup@ubtrobot.com",
+      "type": "text/plain"
+    }
+  }
+}
