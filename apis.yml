@@ -47,6 +47,8 @@ apis:
   humanURL: https://github.com/UBTEDU/Yan_ADK
   baseURL: http://<robot-ip>:9090/v1
   tags:
+  - Subscription
+  tags_raw:
   - subscriptions
   properties:
   - type: OpenAPI
