@@ -1,7 +1,7 @@
 {
   "provider": "ubtech",
   "sources": [
-    "ubtech-subscriptions-api-openapi.yml"
+    "_original/ubtech-yanshee-openadk-openapi-original.yml"
   ],
   "outputs": [
     "ubtech-subscriptions-api-openapi.yml"
@@ -9,6 +9,12 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ubtech-yanshee-openadk-openapi-original.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ubtech-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
