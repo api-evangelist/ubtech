@@ -54,7 +54,7 @@ tags:
 - Service Robots
 apis:
 - aid: ubtech:ubtech-subscriptions-api
-  name: UBTech subscriptions API
+  name: UBTech Subscriptions API
   description: Receive data from remote device.
   humanURL: https://github.com/UBTEDU/Yan_ADK
   baseURL: http://<robot-ip>:9090/v1
