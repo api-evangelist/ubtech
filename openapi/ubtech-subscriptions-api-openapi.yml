@@ -246,152 +246,6 @@ paths:
         required: true
 components:
   schemas:
-    SubscriptionSensorsUltrasonicValue:
-      type: object
-      required:
-      - ultrasonic
-      properties:
-        ultrasonic:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubscriptionSensorsUltrasonicInfo'
-      xml:
-        name: SubscriptionSensorsUltrasonicValue
-    SubscriptionSensorsInfraredValueResponse:
-      type: object
-      required:
-      - code
-      - data
-      - msg
-      properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
-          format: int32
-        data:
-          $ref: '#/components/schemas/SubscriptionSensorsInfraredValue'
-        msg:
-          type: string
-          description: Return code's details.
-          example: Success
-      xml:
-        name: SubscriptionSensorsInfraredValueResponse
-    SubscriptionSensorsEnvironmentValue:
-      type: object
-      required:
-      - environment
-      properties:
-        environment:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubscriptionSensorsEnvironmentInfo'
-      xml:
-        name: SubscriptionSensorsEnvironmentValue
-    SubscriptionSensorsInfraredValue:
-      type: object
-      required:
-      - infrared
-      properties:
-        infrared:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubscriptionSensorsInfraredInfo'
-      xml:
-        name: SubscriptionSensorsInfraredValue
-    SubscriptionVisionsResults:
-      type: object
-      properties:
-        analysis:
-          $ref: '#/components/schemas/SubscriptionVisionsAnalysis'
-        recognition:
-          $ref: '#/components/schemas/SubscriptionName'
-        quantity:
-          type: integer
-          description: Quantity.
-          minimum: 0
-          example: 1
-        color:
-          type: array
-          description: ' The color results. The possible values:
-
-            - none
-
-            - black
-
-            - gray
-
-            - white
-
-            - red
-
-            - orange
-
-            - yellow
-
-            - green
-
-            - cyan
-
-            - blue
-
-            - purple '
-          items:
-            $ref: '#/components/schemas/SubscriptionName'
-          example:
-          - name: black
-          - name: gray
-          - name: red
-          - name: blue
-      xml:
-        name: SubscriptionVisionsResults
-    SubscriptionSensorsPressureValue:
-      type: object
-      required:
-      - pressure
-      properties:
-        pressure:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubscriptionSensorsPressureInfo'
-      xml:
-        name: SubscriptionSensorsUltrasonicValue
-    SubscriptionVisionsAge:
-      type: object
-      properties:
-        age:
-          type: integer
-          description: Age.
-          example: 5
-          minimum: 0
-        group:
-          type: string
-          description: ' The age group value. The possible values:
-
-            - baby
-
-            - children
-
-            - juvenile
-
-            - youth
-
-            - middle_age
-
-            - old_age
-
-            - none '
-          example: baby
-      xml:
-        name: SubscriptionVisionsAge
-    SubscriptionName:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-      xml:
-        name: SubscriptionName
     SubscriptionSensorsGyroInfo:
       type: object
       required:
@@ -455,169 +309,96 @@ components:
           example: 0.72052
       xml:
         name: SubscriptionSensorsGyroInfo
-    SubscriptionSensorsPressureInfo:
+    SubscriptionSensorsInfraredValue:
+      type: object
+      required:
+      - infrared
+      properties:
+        infrared:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionSensorsInfraredInfo'
+      xml:
+        name: SubscriptionSensorsInfraredValue
+    SubscriptionSensorsEnvironmentInfo:
       type: object
       required:
       - id
-      - value
+      - temperature
+      - humidity
       properties:
         id:
-          description: Sensor's I2C address.
           type: integer
           format: int32
           minimum: 1
           maximum: 127
-          example: 35
+          example: 54
         slot:
           type: integer
-          description: Sensor's slot number.
+          description: The sensor's slot number.
           format: int32
           minimum: 1
           maximum: 6
           example: 1
-        value:
-          description: The pressure sensor's value. (N)
+        temperature:
+          description: The temperature sensor's value.
           type: integer
           format: int32
           example: 25
-      xml:
-        name: SubscriptionSensorsPressureInfo
-    SubscriptionVisionsGetResponse:
-      type: object
-      required:
-      - code
-      - type
-      - msg
-      properties:
-        code:
+        humidity:
+          description: The humidity sensor's value.
           type: integer
-          description: Return code. 0 means success.
-          example: 0
-        type:
-          type: string
-          enum:
-          - recognition
-          - tracking
-          - gender
-          - age_group
-          - quantity
-          - color_detect
-          description: ' The compute vision''s result. The possible "type" values:
-
-            - recognition
-
-            - tracking
-
-            - gender
-
-            - age_group
-
-            - quantity
-
-            - color_detect '
-        data:
-          $ref: '#/components/schemas/SubscriptionVisionsResults'
-        timestamp:
-          type: integer
-          format: int64
-          description: Timestamp, Unix standard time.
-          example: 1551838515
-        status:
-          type: string
-          description: Compute vision's status
-          example: idle
-        msg:
-          type: string
-          description: Return code details.
-          example: Success
-      xml:
-        name: SubscriptionVisionsGetResponse
-    SubscriptionCommonResponse:
-      type: object
-      required:
-      - code
-      - data
-      - msg
-      properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
           format: int32
-        data:
-          type: object
-          example: {}
-        msg:
-          description: Return code's details.
-          type: string
-          example: Success
+          example: 75
+        pressure:
+          description: The pressure sensor's value.
+          type: integer
+          format: int32
+          example: 1003
       xml:
-        name: SubscriptionCommonResponse
-    SubscriptionVisionsGender:
+        name: SubscriptionSensorsEnvironmentInfo
+    SubscriptionSensorsEnvironmentValue:
       type: object
       required:
-      - gender
+      - environment
       properties:
+        environment:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionSensorsEnvironmentInfo'
+      xml:
+        name: SubscriptionSensorsEnvironmentValue
+    SubscriptionVisionsAnalysis:
+      type: object
+      properties:
+        age:
+          $ref: '#/components/schemas/SubscriptionVisionsAge'
         gender:
-          type: string
-          enum:
-          - male
-          - female
-          - none
-          description: ' The compute vision''s result. The possible values:
-
-            - male
-
-            - female
-
-            - none    default value '
+          $ref: '#/components/schemas/SubscriptionVisionsGender'
       xml:
-        name: SubscriptionVisionsGender
-    SubscriptionSensorsEnvironmentValueResponse:
+        name: SubscriptionVisionsAnalysis
+    SubscriptionSensorsUltrasonicValue:
       type: object
       required:
-      - code
-      - data
-      - msg
+      - ultrasonic
       properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
-          format: int32
-        data:
-          $ref: '#/components/schemas/SubscriptionSensorsEnvironmentValue'
-        msg:
-          type: string
-          description: Return code's details.
-          example: Success
+        ultrasonic:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionSensorsUltrasonicInfo'
       xml:
-        name: SubscriptionSensorsEnvironmentValueResponse
-    SubscriptionSensorsUltrasonicInfo:
+        name: SubscriptionSensorsUltrasonicValue
+    SubscriptionSensorsPressureValue:
       type: object
       required:
-      - id
-      - value
+      - pressure
       properties:
-        id:
-          description: Sensor's I2C address.
-          type: integer
-          format: int32
-          minimum: 1
-          maximum: 127
-          example: 17
-        slot:
-          type: integer
-          description: Sensor's slot number.
-          format: int32
-          minimum: 1
-          maximum: 6
-          example: 1
-        value:
-          description: ' The ultrasonic sensor''s value. (mm) '
-          type: integer
-          format: int32
-          example: 25
+        pressure:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionSensorsPressureInfo'
       xml:
-        name: SubscriptionSensorsUltrasonicInfo
+        name: SubscriptionSensorsUltrasonicValue
     SubscriptionVoiceResponse:
       type: object
       description: ' Automatic speech recognition or auto transform''s result. '
@@ -670,103 +451,27 @@ components:
           type: string
       xml:
         name: SubscriptionVoiceResponse
-    SubscriptionSensorsPressureValueResponse:
+    SubscriptionVisionsGender:
       type: object
       required:
-      - code
-      - data
-      - msg
+      - gender
       properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
-          format: int32
-        data:
-          $ref: '#/components/schemas/SubscriptionSensorsPressureValue'
-        msg:
+        gender:
           type: string
-          description: Return code's details.
-          example: Success
-      xml:
-        name: SubscriptionSensorsPressureValueResponse
-    SubscriptionMotionsStatus:
-      type: object
-      required:
-      - status
-      properties:
-        status:
-          type: string
-          description: The motions' status.
           enum:
-          - idle
-          - run
-          - pause
-        name:
-          type: string
-          description: Motion name
-          default: None
-        timestamp:
-          type: integer
-          format: int64
-          description: Timestamp, Unix standard time.
-          example: 1551838515
-    SubscriptionSensorsUltrasonicValueResponse:
-      type: object
-      required:
-      - code
-      - data
-      - msg
-      properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
-          format: int32
-        data:
-          $ref: '#/components/schemas/SubscriptionSensorsUltrasonicValue'
-        msg:
-          type: string
-          description: Return code's details.
-          example: Success
+          - male
+          - female
+          - none
+          description: ' The compute vision''s result. The possible values:
+
+            - male
+
+            - female
+
+            - none    default value '
       xml:
-        name: SubscriptionSensorsUltrasonicValueResponse
-    SubscriptionSensorsEnvironmentInfo:
-      type: object
-      required:
-      - id
-      - temperature
-      - humidity
-      properties:
-        id:
-          type: integer
-          format: int32
-          minimum: 1
-          maximum: 127
-          example: 54
-        slot:
-          type: integer
-          description: The sensor's slot number.
-          format: int32
-          minimum: 1
-          maximum: 6
-          example: 1
-        temperature:
-          description: The temperature sensor's value.
-          type: integer
-          format: int32
-          example: 25
-        humidity:
-          description: The humidity sensor's value.
-          type: integer
-          format: int32
-          example: 75
-        pressure:
-          description: The pressure sensor's value.
-          type: integer
-          format: int32
-          example: 1003
-      xml:
-        name: SubscriptionSensorsEnvironmentInfo
-    SubscriptionSensorsInfraredInfo:
+        name: SubscriptionVisionsGender
+    SubscriptionSensorsUltrasonicInfo:
       type: object
       required:
       - id
@@ -778,7 +483,7 @@ components:
           format: int32
           minimum: 1
           maximum: 127
-          example: 23
+          example: 17
         slot:
           type: integer
           description: Sensor's slot number.
@@ -787,12 +492,31 @@ components:
           maximum: 6
           example: 1
         value:
-          description: Distance value. (mm)
+          description: ' The ultrasonic sensor''s value. (mm) '
           type: integer
           format: int32
           example: 25
       xml:
-        name: SubscriptionSensorsInfraredInfo
+        name: SubscriptionSensorsUltrasonicInfo
+    SubscriptionSensorsEnvironmentValueResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          $ref: '#/components/schemas/SubscriptionSensorsEnvironmentValue'
+        msg:
+          type: string
+          description: Return code's details.
+          example: Success
+      xml:
+        name: SubscriptionSensorsEnvironmentValueResponse
     SubscriptionSensorsGyroValueResponse:
       type: object
       required:
@@ -812,75 +536,6 @@ components:
           example: Success
       xml:
         name: SubscriptionSensorsGyroValueResponse
-    SubscriptionVisionsAnalysis:
-      type: object
-      properties:
-        age:
-          $ref: '#/components/schemas/SubscriptionVisionsAge'
-        gender:
-          $ref: '#/components/schemas/SubscriptionVisionsGender'
-      xml:
-        name: SubscriptionVisionsAnalysis
-    SubscriptionSensorsGyroValue:
-      type: object
-      required:
-      - gyro
-      properties:
-        gyro:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubscriptionSensorsGyroInfo'
-      xml:
-        name: SubscriptionSensorsGyroValue
-    SubscriptionSensorsTouchValue:
-      type: object
-      required:
-      - touch
-      properties:
-        touch:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubscriptionSensorsTouchInfo'
-      xml:
-        name: SubscriptionSensorsTouchValue
-    SubscriptionMotionsStatusResponse:
-      type: object
-      required:
-      - code
-      - data
-      - msg
-      properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
-          format: int32
-        data:
-          $ref: '#/components/schemas/SubscriptionMotionsStatus'
-        msg:
-          description: Return code's details.
-          type: string
-          example: Success
-      xml:
-        name: SubscriptionMotionsStatusResponse
-    SubscriptionSensorsTouchValueResponse:
-      type: object
-      required:
-      - code
-      - data
-      - msg
-      properties:
-        code:
-          type: integer
-          description: Return code. 0 means success.
-          format: int32
-        data:
-          $ref: '#/components/schemas/SubscriptionSensorsTouchValue'
-        msg:
-          type: string
-          description: Return code's details.
-          example: Success
-      xml:
-        name: SubscriptionSensorsTouchValueResponse
     SubscriptionSensorsTouchInfo:
       type: object
       required:
@@ -918,6 +573,351 @@ components:
           example: 25
       xml:
         name: SubscriptionSensorsTouchInfo
+    SubscriptionMotionsStatusResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          $ref: '#/components/schemas/SubscriptionMotionsStatus'
+        msg:
+          description: Return code's details.
+          type: string
+          example: Success
+      xml:
+        name: SubscriptionMotionsStatusResponse
+    SubscriptionSensorsInfraredInfo:
+      type: object
+      required:
+      - id
+      - value
+      properties:
+        id:
+          description: Sensor's I2C address.
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 127
+          example: 23
+        slot:
+          type: integer
+          description: Sensor's slot number.
+          format: int32
+          minimum: 1
+          maximum: 6
+          example: 1
+        value:
+          description: Distance value. (mm)
+          type: integer
+          format: int32
+          example: 25
+      xml:
+        name: SubscriptionSensorsInfraredInfo
+    SubscriptionMotionsStatus:
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          type: string
+          description: The motions' status.
+          enum:
+          - idle
+          - run
+          - pause
+        name:
+          type: string
+          description: Motion name
+          default: None
+        timestamp:
+          type: integer
+          format: int64
+          description: Timestamp, Unix standard time.
+          example: 1551838515
+    SubscriptionSensorsInfraredValueResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          $ref: '#/components/schemas/SubscriptionSensorsInfraredValue'
+        msg:
+          type: string
+          description: Return code's details.
+          example: Success
+      xml:
+        name: SubscriptionSensorsInfraredValueResponse
+    SubscriptionSensorsPressureValueResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          $ref: '#/components/schemas/SubscriptionSensorsPressureValue'
+        msg:
+          type: string
+          description: Return code's details.
+          example: Success
+      xml:
+        name: SubscriptionSensorsPressureValueResponse
+    SubscriptionSensorsUltrasonicValueResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          $ref: '#/components/schemas/SubscriptionSensorsUltrasonicValue'
+        msg:
+          type: string
+          description: Return code's details.
+          example: Success
+      xml:
+        name: SubscriptionSensorsUltrasonicValueResponse
+    SubscriptionVisionsResults:
+      type: object
+      properties:
+        analysis:
+          $ref: '#/components/schemas/SubscriptionVisionsAnalysis'
+        recognition:
+          $ref: '#/components/schemas/SubscriptionName'
+        quantity:
+          type: integer
+          description: Quantity.
+          minimum: 0
+          example: 1
+        color:
+          type: array
+          description: ' The color results. The possible values:
+
+            - none
+
+            - black
+
+            - gray
+
+            - white
+
+            - red
+
+            - orange
+
+            - yellow
+
+            - green
+
+            - cyan
+
+            - blue
+
+            - purple '
+          items:
+            $ref: '#/components/schemas/SubscriptionName'
+          example:
+          - name: black
+          - name: gray
+          - name: red
+          - name: blue
+      xml:
+        name: SubscriptionVisionsResults
+    SubscriptionSensorsGyroValue:
+      type: object
+      required:
+      - gyro
+      properties:
+        gyro:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionSensorsGyroInfo'
+      xml:
+        name: SubscriptionSensorsGyroValue
+    SubscriptionName:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+      xml:
+        name: SubscriptionName
+    SubscriptionSensorsTouchValueResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          $ref: '#/components/schemas/SubscriptionSensorsTouchValue'
+        msg:
+          type: string
+          description: Return code's details.
+          example: Success
+      xml:
+        name: SubscriptionSensorsTouchValueResponse
+    SubscriptionSensorsPressureInfo:
+      type: object
+      required:
+      - id
+      - value
+      properties:
+        id:
+          description: Sensor's I2C address.
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 127
+          example: 35
+        slot:
+          type: integer
+          description: Sensor's slot number.
+          format: int32
+          minimum: 1
+          maximum: 6
+          example: 1
+        value:
+          description: The pressure sensor's value. (N)
+          type: integer
+          format: int32
+          example: 25
+      xml:
+        name: SubscriptionSensorsPressureInfo
+    SubscriptionCommonResponse:
+      type: object
+      required:
+      - code
+      - data
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          format: int32
+        data:
+          type: object
+          example: {}
+        msg:
+          description: Return code's details.
+          type: string
+          example: Success
+      xml:
+        name: SubscriptionCommonResponse
+    SubscriptionSensorsTouchValue:
+      type: object
+      required:
+      - touch
+      properties:
+        touch:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionSensorsTouchInfo'
+      xml:
+        name: SubscriptionSensorsTouchValue
+    SubscriptionVisionsGetResponse:
+      type: object
+      required:
+      - code
+      - type
+      - msg
+      properties:
+        code:
+          type: integer
+          description: Return code. 0 means success.
+          example: 0
+        type:
+          type: string
+          enum:
+          - recognition
+          - tracking
+          - gender
+          - age_group
+          - quantity
+          - color_detect
+          description: ' The compute vision''s result. The possible "type" values:
+
+            - recognition
+
+            - tracking
+
+            - gender
+
+            - age_group
+
+            - quantity
+
+            - color_detect '
+        data:
+          $ref: '#/components/schemas/SubscriptionVisionsResults'
+        timestamp:
+          type: integer
+          format: int64
+          description: Timestamp, Unix standard time.
+          example: 1551838515
+        status:
+          type: string
+          description: Compute vision's status
+          example: idle
+        msg:
+          type: string
+          description: Return code details.
+          example: Success
+      xml:
+        name: SubscriptionVisionsGetResponse
+    SubscriptionVisionsAge:
+      type: object
+      properties:
+        age:
+          type: integer
+          description: Age.
+          example: 5
+          minimum: 0
+        group:
+          type: string
+          description: ' The age group value. The possible values:
+
+            - baby
+
+            - children
+
+            - juvenile
+
+            - youth
+
+            - middle_age
+
+            - old_age
+
+            - none '
+          example: baby
+      xml:
+        name: SubscriptionVisionsAge
 externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
